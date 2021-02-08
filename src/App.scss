@@ -1,0 +1,55 @@
+body {
+  background-color: #fff;
+  font-family: sans-serif;
+  transition: 0.7s;
+  color: #000;
+  h1 {
+    font-size: 52px;
+  }
+  #DarkToggle {
+    appearance: none;
+    cursor: pointer;
+    border-radius: 5rem;
+    background-color: #cccccc;
+    width: 50px;
+    padding: 5px;
+    position: relative;
+    .round {
+      background-color: #fff;
+      content: "";
+      height: 26px;
+      transition: 0.7s;
+      width: 26px;
+      border-radius: 50%;
+      position: relative;
+      left: 0;
+    }
+  }
+  ul {
+    list-style: none; /* Remove default bullets */
+    li::before {
+      content: "\2022"; /* Add content: \2022 is the CSS Code/unicode for a bullet */
+      color: black; /* Change the color */
+      font-weight: bold; /* If you want it to be bold */
+      display: inline-block; /* Needed to add space between the bullet and the text */
+      width: 1em; /* Also needed for space (tweak if needed) */
+      margin-left: -1em; /* Also needed for space (tweak if needed) */
+    }
+  }
+}
+//Dark Mode with .scss only need write the different styles encapsulated in body.dark
+body.dark {
+  background-color: #000;
+  color: white;
+  #DarkToggle {
+    background-color: #0496ff;
+    .round {
+      left: 24px;
+    }
+  }
+  ul {
+    li::before {
+      color: #0496ff; /* Change the color */
+    }
+  }
+}
